@@ -19,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    //Inicializamos posición y valores del arreglo
     image = 0;
     imageArray = [[NSMutableArray alloc]
                   initWithObjects:@"homeroSimpson.jpg",
@@ -28,6 +29,33 @@
                   @"LisaSimpson.png",
                   nil
                   ];
+    nombreArray = [[NSMutableArray alloc]
+                   initWithObjects:@"Homero Simpson",
+                   @"Maggie Simpson",
+                   @"Marge Simpson",
+                   @"Bart Simpson",
+                   @"Lisa Simpson",
+                   nil
+                   ];
+    edadArray = [[NSMutableArray alloc]
+                 initWithObjects:@"40",
+                 @"2",
+                 @"35",
+                 @"12",
+                 @"9",
+                 nil
+                 ];
+    
+    longitudArray = (int)imageArray.count;
+    //NSLog(@"value : %lu %d", (unsigned long)(int)[imageArray count], longitudArray);
+    
+    //Unimos los arreglos en uno
+    globalArray = [NSMutableArray arrayWithObjects:
+                   imageArray,
+                   nombreArray,
+                   edadArray,
+                   nil];
+    
     
     self.imgImage.image = [UIImage imageNamed:imageArray[image]];
     
@@ -43,13 +71,13 @@
     if (image > 0) {
         image--;
     }else{
-        image = 4;
+        image = (longitudArray-1);
     }
     self.imgImage.image = [UIImage imageNamed:imageArray[image]];
 }
 
 - (IBAction)btnNextSender:(id)sender {
-    if (image >= 4) {
+    if (image >= (longitudArray-1)) {
         image = 0;
     }else{
         image++;

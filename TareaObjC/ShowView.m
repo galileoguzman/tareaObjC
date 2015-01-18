@@ -9,6 +9,7 @@
 #import "ShowView.h"
 #import "GlobalVars.h"
 
+
 @interface ShowView ()
 
 @end
@@ -20,6 +21,10 @@
     // Do any additional setup after loading the view.
     
     transparency = 1.0;
+    
+    //self.lblNombre.text = nombreArray[image];
+    self.lblNombre.text = globalArray[1][image];
+    self.lblEdad.text = globalArray[2][image];
     self.imgSingle.image = [UIImage imageNamed:imageArray[image]];
 
 
@@ -48,6 +53,7 @@
 - (IBAction)btnMasTransparencia:(id)sender {
     transparency = transparency + 0.2;
     [self.imgSingle setAlpha:transparency];
+    //self.imgSingle.alpha = transparency;
 }
 
 - (IBAction)btnRegresarSender:(id)sender {
