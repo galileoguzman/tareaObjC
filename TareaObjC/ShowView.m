@@ -19,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    transparency = 1.0;
     self.imgSingle.image = [UIImage imageNamed:imageArray[image]];
 
 
@@ -40,10 +41,13 @@
 */
 
 - (IBAction)btnMenosTransparencia:(id)sender {
-    
+    transparency = transparency - 0.2;
+    [self.imgSingle setAlpha:transparency];
 }
 
 - (IBAction)btnMasTransparencia:(id)sender {
+    transparency = transparency + 0.2;
+    [self.imgSingle setAlpha:transparency];
 }
 
 - (IBAction)btnRegresarSender:(id)sender {

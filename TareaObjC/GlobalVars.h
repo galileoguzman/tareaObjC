@@ -10,6 +10,7 @@
 
 NSMutableArray *imageArray;
 int image;
+float transparency;
 
 @interface GlobalVars : NSObject
 
